@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #cbd5f5;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 20px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background: #1e293b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 10vw, 3rem);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cell:hover {
+  background: #334155;
+}
+
+.cell.x {
+  color: #38bdf8;
+}
+
+.cell.o {
+  color: #f472b6;
+}
+
+.winner {
+  background: #0092fa !important;
+  color: #000;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button,
+select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background: #38bdf8;
+  color: #000;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+select {
+  background: #1e293b;
+  color: #fff;
+}
+
+select:hover {
+  background: #334155;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  button,
+  select {
+    width: 100%;
+  }
+}
